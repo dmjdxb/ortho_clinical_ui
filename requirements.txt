@@ -1,0 +1,10 @@
+# Core
+fastapi>=0.104.0
+uvicorn>=0.24.0
+streamlit>=1.28.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+httpx>=0.25.0
+
+# Local package (editable install)
+# pip install -e /path/to/ortho_intelligence

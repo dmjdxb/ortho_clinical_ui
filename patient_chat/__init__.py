@@ -1,0 +1,1 @@
+"""Patient chat UI module."""
