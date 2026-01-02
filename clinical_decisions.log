@@ -1,0 +1,48 @@
+2026-01-02 07:09:50,171 - CLINICAL - INFO - EDF Registry loaded: version=1.0, entries=1 [Charter Addendum - EDF]
+2026-01-02 07:09:50,171 - CLINICAL - INFO - Clinical engine initialized with 149 conditions
+2026-01-02 07:09:50,171 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:09:50,172 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:09:50,172 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:09:50,172 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:09:50,173 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:09:50,173 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:11:35,199 - CLINICAL - INFO - EDF Registry loaded: version=1.0, entries=1 [Charter Addendum - EDF]
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Clinical engine initialized with 149 conditions
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:11:35,200 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:12:29,543 - CLINICAL - INFO - EDF Registry loaded: version=1.0, entries=1 [Charter Addendum - EDF]
+2026-01-02 07:12:29,544 - CLINICAL - INFO - Clinical engine initialized with 149 conditions
+2026-01-02 07:12:29,544 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:12:29,545 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:12:29,545 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:12:29,545 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:12:29,545 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:12:29,545 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:12:49,469 - CLINICAL - INFO - EDF Registry loaded: version=1.0, entries=1 [Charter Addendum - EDF]
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Clinical engine initialized with 149 conditions
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:12:49,470 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:14:34,175 - CLINICAL - INFO - EDF Registry loaded: version=1.0, entries=1 [Charter Addendum - EDF]
+2026-01-02 07:14:34,176 - CLINICAL - INFO - Clinical engine initialized with 149 conditions
+2026-01-02 07:14:34,176 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:14:34,177 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:14:34,177 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:14:34,177 - CLINICAL - INFO - Identified region: knee (matched 'knee')
+2026-01-02 07:14:34,177 - CLINICAL - INFO - Initial top conditions for region 'knee': [('patellofemoral_pain_syndrome', 0.11968164681946022), ('patellar_tendinopathy', 0.11170287036482955), ('it_band_syndrome', 0.09574531745556818), ('meniscal_tear', 0.09574531745556818), ('acl_tear', 0.06383021163704546)]
+2026-01-02 07:14:34,177 - CLINICAL - INFO - Starting assessment for: Knee pain when climbing stairs
+2026-01-02 07:16:16,599 - CLINICAL - INFO - EDF Registry loaded: version=1.0, entries=1 [Charter Addendum - EDF]
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Clinical engine initialized with 149 conditions
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Identified region: hip (matched 'hip')
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Initial top conditions for region 'hip': [('hip_labral_tear', 0.18379012838158174), ('hip_fai', 0.12531145116926026), ('hamstring_strain', 0.08354096744617351), ('trochanteric_bursitis', 0.08354096744617351), ('quadriceps_strain', 0.06683277395693882)]
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Starting assessment for: Hip pain after exercise
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Identified region: hip (matched 'hip')
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Initial top conditions for region 'hip': [('hip_labral_tear', 0.18379012838158174), ('hip_fai', 0.12531145116926026), ('hamstring_strain', 0.08354096744617351), ('trochanteric_bursitis', 0.08354096744617351), ('quadriceps_strain', 0.06683277395693882)]
+2026-01-02 07:16:16,599 - CLINICAL - INFO - Starting assessment for: Hip pain after exercise

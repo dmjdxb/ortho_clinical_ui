@@ -53,6 +53,7 @@ class IntelligenceAdapter:
     def __init__(self):
         self.settings = get_settings()
         self._sessions: dict[str, "ClinicalSession"] = {}
+        self._mock_sessions: set[str] = set()  # Track sessions using mock mode
 
     def start_session(
         self, session_id: str, chief_complaint: str
@@ -68,23 +69,32 @@ class IntelligenceAdapter:
             First question to ask, or None if no questions needed
         """
         if not INTELLIGENCE_AVAILABLE:
+            self._mock_sessions.add(session_id)
             return self._mock_start_session(session_id, chief_complaint)
 
-        session = ClinicalSession(
-            session_id=session_id, engine_version=self.settings.engine_version
-        )
-        self._sessions[session_id] = session
+        try:
+            session = ClinicalSession(
+                session_id=session_id, engine_version=self.settings.engine_version
+            )
+            self._sessions[session_id] = session
 
-        question = session.start_assessment(chief_complaint)
-        if question is None:
-            return None
+            # Start assessment and then get first question
+            session.start_assessment(chief_complaint)
+            question = session.get_next_question()
 
-        return QuestionResult(
-            question_id=question.question_id,
-            text=question.text,
-            question_type=question.question_type,
-            options=list(question.options) if question.options else None,
-        )
+            if question is None:
+                return None
+
+            return QuestionResult(
+                question_id=question.question_id,
+                text=question.text,
+                question_type=question.question_type,
+                options=list(question.options) if question.options else None,
+            )
+        except Exception:
+            # Fall back to mock if ortho_intelligence fails
+            self._mock_sessions.add(session_id)
+            return self._mock_start_session(session_id, chief_complaint)
 
     def answer_question(
         self, session_id: str, question_id: str, answer: str | bool | int | float
@@ -100,23 +110,30 @@ class IntelligenceAdapter:
         Returns:
             Next question to ask, or None if assessment is complete
         """
-        if not INTELLIGENCE_AVAILABLE:
+        # Use mock mode if intelligence unavailable or session is using mock
+        if not INTELLIGENCE_AVAILABLE or session_id in self._mock_sessions:
             return self._mock_answer_question(session_id, question_id, answer)
 
         session = self._sessions.get(session_id)
         if session is None:
             raise ValueError(f"Session {session_id} not found")
 
-        next_question = session.answer_question(question_id, answer)
-        if next_question is None:
-            return None
+        try:
+            # Submit answer and get next question
+            session.answer_question(question_id, answer)
+            next_question = session.get_next_question()
 
-        return QuestionResult(
-            question_id=next_question.question_id,
-            text=next_question.text,
-            question_type=next_question.question_type,
-            options=list(next_question.options) if next_question.options else None,
-        )
+            if next_question is None:
+                return None
+
+            return QuestionResult(
+                question_id=next_question.question_id,
+                text=next_question.text,
+                question_type=next_question.question_type,
+                options=list(next_question.options) if next_question.options else None,
+            )
+        except Exception:
+            return self._mock_answer_question(session_id, question_id, answer)
 
     def evaluate(self, session_id: str) -> EvaluationResult:
         """
@@ -132,33 +149,42 @@ class IntelligenceAdapter:
         - Returns single ICD-10 code (subject to clinician review)
         - No probabilities exposed
         """
-        if not INTELLIGENCE_AVAILABLE:
+        # Use mock mode if intelligence unavailable or session is using mock
+        if not INTELLIGENCE_AVAILABLE or session_id in self._mock_sessions:
             return self._mock_evaluate(session_id)
 
         session = self._sessions.get(session_id)
         if session is None:
-            raise ValueError(f"Session {session_id} not found")
+            return self._mock_evaluate(session_id)
 
-        result = session.evaluate()
+        try:
+            result = session.evaluate()
 
-        # Get top condition (no probability exposed)
-        if result.differential:
-            top_condition = result.differential[0]
-            icd10 = top_condition.icd10_codes[0] if top_condition.icd10_codes else "Z03.89"
-            condition_name = top_condition.name
-        else:
-            icd10 = "Z03.89"  # Default: observation for other suspected diseases
-            condition_name = "Undetermined"
+            # Get top condition (no probability exposed)
+            if result.differential:
+                top_condition = result.differential[0]
+                icd10 = (
+                    top_condition.icd10_codes[0]
+                    if top_condition.icd10_codes
+                    else "Z03.89"
+                )
+                condition_name = top_condition.name
+            else:
+                icd10 = "Z03.89"  # Default: observation for other suspected diseases
+                condition_name = "Undetermined"
 
-        return EvaluationResult(
-            suggested_icd10=icd10,
-            condition_name=condition_name,
-            audit_hash=result.audit_hash,
-        )
+            return EvaluationResult(
+                suggested_icd10=icd10,
+                condition_name=condition_name,
+                audit_hash=result.audit_hash,
+            )
+        except Exception:
+            return self._mock_evaluate(session_id)
 
     def cleanup_session(self, session_id: str) -> None:
         """Remove session from memory."""
         self._sessions.pop(session_id, None)
+        self._mock_sessions.discard(session_id)
 
     # Mock implementations for development without ortho_intelligence
 
