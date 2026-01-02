@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     demo_clinician_id: str = "demo_clinician"
 
     # ortho_intelligence version (must match installed package)
-    engine_version: str = "1.0.0"
+    engine_version: str = "1.0.1"
 
     model_config = {"env_prefix": "ORTHO_CLINICAL_"}
 
